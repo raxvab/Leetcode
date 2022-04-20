@@ -9,15 +9,14 @@ public:
     //  update 1: this approach won't work I'll have to keep a hash table for the indices
         unordered_map<int,int> m;
         int i=0,j=nums.size();
-        for(auto i:nums)
-            m[i]++;
+        for(int i=0;i<nums.size();i++)
+            m[nums[i]]=i;
         unordered_map<int,int>:: iterator it;
         
             while(i<nums.size())
          {
              if((m.find(target-nums[i]))!=m.end())
-                {  auto t= find(nums.begin(),nums.end(),target-nums[i]);
-                    j=t-nums.begin();
+                {  j=m[target-nums[i]];
                    if(i!=j) 
                     return {i,j};
              
