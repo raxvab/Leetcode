@@ -30,6 +30,10 @@ public:
             {
                 int m=i+dir[q][0];
                 int n=j+dir[q][1];
+                // this fucking line costed me 2 hrs as the expression heights[m][n]==-1 was gonna be checked first which made the vector<vector<int>> value to be negative for being true when out of bound that wasn't fucking possible 
+                // ykw the worst part is
+                // it's a programming error not implementational
+                // shame vaibhav
                 if( m==r || n==c||m<0||n<0||heights[m][n]==-1)
                     continue;
             // }
