@@ -7,7 +7,7 @@ public:
         for(int i=0;i<nums.size();i++)
         {
             crsum+=nums[i];
-            sum=max(crsum,sum);
+           sum=sum<crsum?crsum:sum; 
             
             if(crsum<0)
                 crsum=0;
