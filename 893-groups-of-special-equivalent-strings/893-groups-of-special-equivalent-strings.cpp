@@ -30,8 +30,8 @@ public:
             
             
         }
-        for( string i: set1)
-            cout<<i<<endl;
+        // for( string i: set1)
+        //     cout<<i<<endl;
         return set1.size();
         
         
