@@ -2,10 +2,10 @@ class Solution {
 public:
     vector<string> wordSubsets(vector<string>& w1, vector<string>& w2) {
         
-        vector<int> b1(26,0);
+           int b1[26]={0};
            for(string i: w2) {
                
-            vector<int>c1(26,0);
+           int c1[26]={0};
             for(char j : i) {
                 c1[j-'a']++;
             }
@@ -20,7 +20,7 @@ public:
                 vector<string>res;
 
         for(auto i: w1) {
-               vector<int> a1(26,0);
+                    int a1[26]={0};
             for(char j : i) {
                 a1[j-'a']++;
             } 
