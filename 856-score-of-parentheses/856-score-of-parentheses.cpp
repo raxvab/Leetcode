@@ -16,5 +16,21 @@ public:
           st.top()+=val;
         }}
         return st.top();
+        // another approach
+        /* stack<int> st;
+    
+        int ans=0;
+        
+        for(auto i : s)
+        {
+            if(i == '(')
+                ans = 0;st.push(ans);
+            else 
+                st.pop(),ans = st.top() + max(ans*2 ,1);
+        }
+
+        
+        
+        return ans;*/
     }
 };
