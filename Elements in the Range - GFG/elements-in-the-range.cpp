@@ -9,17 +9,17 @@ class Solution{
 	public:
 	bool check_elements(int arr[], int n, int A, int B)
 	{
-	set<int>s;
-		while(A<=B){
-		    s.insert(A);
-		    A++;
+		// Your code goes here
+	
+		set<int> s;
+		for(int i=0;i<n;i++)
+		{
+		    if(arr[i]<=B and arr[i]>=A)
+		    s.insert(arr[i]);
 		}
-		for(int i=0;i<n;i++){
-		    if(s.count(arr[i]))
-		        s.erase(arr[i]);
-		}
-		
-		return s.empty();
+		if(s.size()==B-A+1)
+		return true;
+		return false;
 	}
 
 
