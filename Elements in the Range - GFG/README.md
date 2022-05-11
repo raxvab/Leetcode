@@ -1,7 +1,7 @@
 # Elements in the Range
 ## Easy
 <div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given an array <strong>arr[]</strong> containing positive elements. ‘A’ and ‘B’ are two numbers defining a range. The task is to check if the array contains all elements in the given range.</span></p>
+                <p></p><p><span style="font-size:18px">Given an array <strong>arr[]</strong> containing positive elements. A and B are two numbers defining a range. The task is to check if the array contains all elements in the given range.</span></p>
 
 <p><span style="font-size:18px"><strong>Example 1:</strong></span></p>
 
