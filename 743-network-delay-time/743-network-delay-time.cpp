@@ -5,12 +5,12 @@ class Solution
         {
             // here the problem simply is to reach all thenodes and return the time taken by the traversal maximum
             
-            int i, j, ans = 0;
+     
             
             // we intend to creat an adjacency list here
             vector<vector<pair<int, int>>> adj(n + 1);
             // distance vector with an intially very large value so that it's easy to pick out the recent node
-            vector<int> dist(n + 1, 1e9);
+            vector<int> dist(n + 1, INT_MAX);
             
             // creating the graph here
             for (auto u: times) 
@@ -34,7 +34,7 @@ class Solution
                 
                 for (auto[x, y]: adj[t])
                 {
-                    // if the current distance is lessser than initialized  one which obv was 1e9 we push it to the min heap
+                    // if the current distance is lessser than initialized  one which obv was INT_MAX we push it to the min heap
                     if (d + y < dist[x])
                     {
                         dist[x] = d + y;
@@ -44,11 +44,12 @@ class Solution
             }
             
             // here we check if any node is let unvisited if that's so we return -1 cuz no matter waht signal won't reach there (connected components)
-            for (i = 1; i <= n; i++)
-               if(dist[i]==1e9)
+            int timetotal=0;
+            for ( int i = 1; i <= n; i++)
+               if(dist[i]==INT_MAX)
                    return -1;
             else
-                   ans = max(ans, dist[i]);
-            return ans;
+                   timetotal = max(timetotal, dist[i]);
+            return timetotal;
         }
 };
