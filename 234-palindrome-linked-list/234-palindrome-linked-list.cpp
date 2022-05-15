@@ -29,8 +29,10 @@ class Solution
     {
         if (head == NULL || head->next == NULL)
             return true;
+        
         ListNode *slow = head;
         ListNode *fast = head->next;
+        
         ListNode *temp = head;
         while (fast and fast->next)
         {
