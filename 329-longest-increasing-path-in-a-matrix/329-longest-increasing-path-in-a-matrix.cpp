@@ -25,15 +25,15 @@ class Solution {
     
 public:
     int longestIncreasingPath(vector<vector<int>>& matrix) {
-        int ROWS = matrix.size();
-        int COLS = matrix[0].size();
+        int row = matrix.size();
+        int col = matrix[0].size();
         
-        vector<vector<int>> dp(ROWS, vector<int>(COLS, -1));
+        vector<vector<int>> dp(row, vector<int>(col, -1));
         
         int ans = 0;
         
-        for(int r = 0; r < ROWS; r++) {
-            for(int c = 0; c < COLS; c++) {
+        for(int r = 0; r < row; r++) {
+            for(int c = 0; c < col; c++) {
                 int lip = dfs(matrix, r, c, dp, -1000000);
                 ans = max(ans, lip);
             }
