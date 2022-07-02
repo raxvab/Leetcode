@@ -10,25 +10,20 @@
  */
 class Solution {
 public:
+    ListNode* d=NULL;
     ListNode* reverseList(ListNode* head) {
    
         if(head==NULL or head->next== NULL)
             return head;
+        ListNode* temp=reverseList(head->next);
+        ListNode* dummy=head->next;
+        dummy->next=head;
+        head->next=NULL;
         
-        ListNode* newhead=NULL;
+        // temp->next=head;
 
-        while(head)
-        {
-                ListNode* temp=head->next;
-         
-         head->next=newhead;
-         newhead= head;
-         
-            head=temp;
-        }
-        
-    return newhead;
-    
+        return temp;
+     
     
     }
 };
