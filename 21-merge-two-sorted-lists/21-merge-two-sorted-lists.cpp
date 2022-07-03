@@ -11,27 +11,67 @@
 class Solution {
 public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+      
+//         if(l1==NULL)
+//             return l2;
+//         if(l2==NULL)
+//             return l1;
+        
+//         ListNode* temp=new  ListNode(-1);
+//                 ListNode* ptr1=l1;
+// ListNode* ptr3=temp;
+//                 ListNode* ptr2=l2;
+        
+        
+//         while(ptr1!=NULL and ptr2!=NULL )
+//         {
+//             if(ptr1->val<ptr2->val)
+//             {
+//                 ptr3->next=ptr1;
+//                 ptr1=ptr1->next;
+//             }
+//             else
+//                 {
+            
+//                 ptr3->next=ptr2;
+//                 ptr2=ptr2->next;
+//             }
+//             ptr3=ptr3->next;
+//             }
+        
+//         while(ptr1)
+//         {
+//             ptr3->next=ptr1;
+//             ptr1=ptr1->next;
+//             ptr3=ptr3->next;
+//         }
+//          while(ptr2)
+//         {
+//             ptr3->next=ptr2;
+//             ptr2=ptr2->next;
+//             ptr3=ptr3->next;
+//         }
+        
+//         return temp->next;
+        
+        //===== Recursive=====//
+        
         if(l1==NULL)
             return l2;
         if(l2==NULL)
             return l1;
-        if(l1->val>l2->val)
-            swap(l1,l2);
-        ListNode* res=l1;
-while(l1!=NULL&&l2!=NULL)
-{
-    ListNode* tmp=NULL;
-    while(l1!=NULL && l1->val<=l2->val)
-    {
-        tmp=l1;
-        //swap(l1,l2);
-        l1=l1->next;
         
-    }
-    tmp->next=l2;
-    swap(l1,l2);
-    
-}
-    return res;    
+        ListNode* result;
+        if(l1->val<l2->val)
+         {   result=l1;
+        result->next=  mergeTwoLists(l1->next,l2);}
+        else
+        {
+             result=l2;
+            result->next=mergeTwoLists(l1,l2->next);
+        }
+        // result=l2;
+        return result;
+        
     }
 };
