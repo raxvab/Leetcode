@@ -1,7 +1,7 @@
 class Solution {
 public:
     int arrangeCoins(int n) {
-        long long  l=1,h=n;
+        long long  l=0,h=n;
       long long res=INT_MIN;
       while(l<=h)
       {
